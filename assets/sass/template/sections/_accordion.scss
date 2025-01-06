@@ -1,0 +1,152 @@
+.accordion-item {
+  &:first-of-type {
+    .accordion-button {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.accordion-button {
+  padding: 0;
+  border: none;
+  text-align: left;
+  font-family: $title-font;
+  font-weight: 700;
+
+  &:after {
+    display: none;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:not(.collapsed) {
+    color: $title-color;
+    background-color: transparent;
+  }
+}
+
+.accordion-collapse {
+  border: none;
+}
+
+.accordion-body {
+  padding: 0;
+}
+
+
+.accordion-style1 {
+  .accordion-button {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: $title-font;
+    padding: 18px 60px 18px 35px;
+    background-color: #FAF6F0;
+    margin: -3px;
+    display: block;
+    width: calc(100% + 6px);
+    transition: all ease 0.4s;
+
+    &:before {
+      content: '\f107';
+      font-family: $icon-font;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-weight: 400;
+      text-align: center;
+      margin-top: -25px;
+      background-color: $white-color;
+      color: $body-color;
+      font-size: 18px;
+      border-radius: 50%;
+      transition: all ease 0.4s;
+    }
+
+    &:hover,
+    &:not(.collapsed) {
+      background-color: $secondary-color;
+      color: $white-color;
+
+      &:before {
+        background-color: $theme-color;
+        color: $white-color;
+      }
+    }
+  }
+  
+  .accordion-item:last-of-type .accordion-button,
+  .accordion-item:first-of-type .accordion-button,
+  .accordion-button {
+    border-radius: 30px 50px 30px 50px;
+  }
+
+  .accordion-item {
+    margin-bottom: 20px;
+    border: 3px solid transparent;
+    border-radius: 30px 50px 30px 30px;
+    transition: all ease 0.4s;
+    
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    &.active {
+      border-color: #D8D8D8;
+    }
+  }
+
+  .accordion-body {
+    padding: 20px 35px 20px 35px;
+  }
+}
+
+@include ml {
+  .accordion-style1 {
+    .accordion-button {
+      font-size: 18px;
+      padding: 15px 45px 15px 25px;
+
+      &::before {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        margin-top: -20px;
+      }
+    }
+
+    .accordion-body {
+      padding: 20px 20px 20px 20px;
+    }
+  }
+}
+
+@include sm {
+  .accordion-style1 {
+    .accordion-button {
+      font-size: 16px;
+      padding: 15px 40px 15px 20px;
+
+      &::before {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 16px;
+        margin-top: -16px;
+        right: 6px;
+      }
+    }
+  }
+}

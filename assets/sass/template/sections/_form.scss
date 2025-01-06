@@ -1,0 +1,154 @@
+.form-wrap1.space {
+	@media (min-width: $md) {
+		padding-bottom: 480px;
+	}
+
+	@include md {
+		background-image: none !important;
+	}
+}
+
+
+.form-style1 {
+	.form-group {
+		position: relative;
+		margin: 0 auto;
+		max-width: 880px;
+	}
+
+	input {
+		height: 70px;
+		border-color: #D8D8D8;
+		border-radius: 9999px;
+		padding-left: 50px;
+	}
+
+	.vs-btn {
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		transform: translateY(-50%);
+	}
+}
+
+.form-style2 {
+	.form-title {
+		color: $white-color;
+		margin: -0.2em 0 18px 0;
+	}
+
+	.form-group {
+		display: flex;
+		margin: 0;
+	}
+
+	input {
+		border: 2px solid $white-color;
+		color: $white-color;
+		background-color: transparent;
+		height: 60px;
+		border-radius: 9999px;
+		margin-right: 10px;
+		flex: 1;
+
+		@include inputPlaceholder {
+			color: $white-color;
+		}
+	}
+}
+
+.form-style3 {
+	border: 3px solid $secondary-color;
+	padding: 30px 30px 3px 30px;
+	margin-bottom: 30px;
+	background-color: $white-color;
+	border-radius: 30px;
+
+	.form-group {
+		margin-bottom: 27px;
+	}
+
+	input {
+		border: 1px solid rgba(#999999, 0.5);
+		padding-right: 20px;
+		padding-left: 20px;
+		border-radius: 10px;	
+	}
+
+	input {
+		&[type="checkbox"] {
+			~ label {
+				font-weight: 500;
+				margin: 0;
+
+				&:before {
+					background-color: #D9D9D9;
+					border: none;
+				}
+			}
+
+			&:checked {
+				~ label {
+					&:before {
+						background-color: $theme-color;
+					}
+				}
+			}
+		}
+	}
+
+	label {
+		font-weight: 400;
+	}
+
+	.required {
+		font-size: 14px;
+		color: $error-color;
+	}
+
+	&.layout2 {
+		padding: 0;
+		border: none;
+	}
+
+}
+
+
+@include sm {
+	.form-style1 {
+		.form-group {
+			text-align: center;
+		}
+
+		input {
+			margin-bottom: 20px;
+			height: 50px;
+			padding-left: 30px;
+			font-size: 14px;
+		}
+
+		.vs-btn {
+			position: relative;
+			top: 0;
+			transform: none;
+		}
+	}
+
+	.form-style2 {
+		.form-group {
+			display: block;
+		}
+
+		.vs-btn {
+			margin-top: 10px;
+		}
+
+		input {
+			height: 50px;
+		}
+	}
+
+	.form-style3 {
+		padding: 30px 15px 3px 15px;
+	}
+}

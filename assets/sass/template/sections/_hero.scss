@@ -1,0 +1,49 @@
+
+// ls-wp-container
+.ls-container.ls-v6 .ls-bottom-slidebuttons {
+  background-color: #fff;
+  padding: 6px 9px;
+  line-height: 1;
+  border-radius: 9999px;
+}
+
+.ls-container.ls-v6 .ls-bottom-slidebuttons a {
+  border: none !important;
+  background-color: #B5B5B5;
+  width: 13px !important;
+  height: 13px !important;
+}
+
+
+.ls-container.ls-v6 .ls-bottom-slidebuttons a:hover,
+.ls-container.ls-v6 .ls-bottom-slidebuttons a.ls-nav-active {
+  border: none !important;
+  background-color: var(--theme-color) !important;
+}
+
+.ls-container.ls-v6 .ls-bottom-nav-wrapper {
+  text-align: right;
+  max-width: var(--main-container);
+  top: -73px !important;
+}
+
+
+@media (max-width: 1199px) {
+  .ls-container.ls-v6 .ls-bottom-slidebuttons {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ls-html-layer.ls-layer .vs-btn {
+    padding: 10px 23px 12px 23px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ls-html-layer.ls-layer .vs-btn {
+    padding: 9px 22px 12px 22px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,241 @@
+.service-style1 {
+  --theme-color: #76AD1E;
+  margin-bottom: 30px;
+  
+  .service-body {
+    text-align: center;
+    padding-bottom: 115px;
+    position: relative;
+  }
+  
+  .service-img {
+    border-radius: 30px 30px 0 0;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      transform: scale(1.001);
+      transition: all ease 0.4s;
+    }
+  }
+
+  .service-content {
+    padding: 0.1px 20px 20px 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    margin-top: -145px;
+    background-color: $theme-color;
+    border-radius: 150px 150px 30px 30px;
+  }
+
+  .service-icon {
+    width: var(--icon-size, 100px);
+    height: var(--icon-size, 100px);
+    line-height: var(--icon-size, 100px);
+    background-color: $white-color;
+    text-align: center;
+    border-radius: var(--icon-radius, 10px 50px 10px 10px);
+    display: inline-block;
+    margin-top: -35px;
+    margin-bottom: 28px;
+    transition: all ease 0.4s;
+  }
+
+  .service-title {
+    color: $white-color;
+    font-size: 26px;
+    margin-bottom: 12px;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .service-text {
+    color: $white-color;
+    margin: 0 0 17px 0;
+  }
+
+  .service-bottom {
+    overflow: hidden;
+  }
+  
+  .service-btn {
+    display: block;
+    border: 3px solid $white-color;
+    color: $white-color;    
+    border-radius: 9999px;
+    height: 50px;
+    line-height: 43px;
+    font-family: $title-font;
+    font-weight: 600;
+    transition: all ease 0.4s;
+    margin-bottom: -50px;
+    opacity: 0;
+    visibility: hidden;
+
+    &:hover {
+      background-color: $white-color;
+      color: $theme-color;
+    }
+  }
+
+  &:hover {
+    .service-btn {
+      margin-bottom: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .service-icon {
+      background-color: $theme-color2;
+    }
+
+    .service-img {
+      img {
+        transform: scale(1.15);
+        transition: all ease 0.4s;
+      }
+    }
+  }  
+
+  &:nth-child(2n+2) {
+    --theme-color: #18C0CB;
+    --icon-radius: 10px 10px 10px 50px;
+  }
+
+  &:nth-child(3n+3) {
+    --theme-color: #490D59;
+    --icon-radius: 50px 10px 10px 10px;
+  }
+
+  &:nth-child(4n+4) {
+    --theme-color: #E93500;
+    --icon-radius: 10px 10px 50px 10px;
+  }
+}
+
+.service-style2 {
+  display: flex;
+  margin-bottom: 30px;
+
+  .service-icon {
+    position: relative;
+    display: inline-block;
+    width: 76px;
+    height: 78px;
+    line-height: 76px;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .service-shape1,
+  .service-shape2,
+  .service-shape3 {
+    background-color: $theme-color2;
+    position: absolute;
+    left: var(--border-size, 0);
+    top: var(--border-size, 0);
+    right: var(--border-size, 0);
+    bottom: var(--border-size, 0);
+    clip-path: url(#service-clip1);
+    z-index: -1;
+    transition: all ease 0.4s;
+  }
+
+  .service-shape2 {
+    --border-size: 2px;
+    background-color: $white-color;
+  }
+  
+  .service-shape3 {
+    --border-size: 5px;
+    background-color: $secondary-color;
+  }
+
+  &:hover {
+    .service-shape3 {
+      background-color: $theme-color;
+    }
+
+    .service-shape1 {
+      background-color: $secondary-color;
+    }
+  }
+
+  .service-content {
+    flex: 1;
+  }
+
+  .service-title {
+    font-size: 26px;
+    margin: -0.2em 0 8px 0;
+  }
+
+  .service-text {
+    margin: 0;
+  }
+}
+
+.service-description {
+  margin-top: 30px;
+  margin-bottom: 42px;
+}
+
+
+@include lg {
+  .service-style1 {
+    .service-body {
+      padding-bottom: 90px;
+    }
+  }
+
+  .service-style2 { 
+    display: block;
+    text-align: center;
+
+    .service-icon {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .gy-30 {
+    .service-style2 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include sm {
+  .service-style1 {
+    .service-content {
+      position: relative;
+    }
+    
+    .service-body {
+      padding-bottom: 0;
+    }
+
+    .service-btn {
+      margin-bottom: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .service-style2 {
+    .service-title {
+      font-size: 22px;
+    }
+  }
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinnov - Commercialisation</title>
+    <link rel="stylesheet" href="css/commercialisation.css">
+    <style>
+        .search {
+            margin-bottom: auto;
+            margin-top: auto;
+            background-color: rgba(104, 193, 88, 0.65);
+            border-radius: 40px;
+            padding: 10px;
+        }
+
+        .search_input {
+            color: green;
+            border: 0;
+            outline: 0;
+            background: none;
+            caret-color: transparent;
+            transition: width 0.4s linear;
+        }
+
+        .search .search_input {
+            width: 205px;
+            caret-color: white;
+            transition: width 0.4s linear;
+        }
+
+        .search:hover>.search_icon {
+            background: rgb(104, 193, 88);
+            color: #fff;
+        }
+
+        .search_icon {
+            height: 50px;
+            width: 50px;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: white;
+            background-color: green;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+
+        .dynamicLink {
+            color: red;
+            /* Changez la couleur selon vos besoins */
+            margin-left: 5px;
+            cursor: pointer;
+            /* Ajoutez d'autres styles si nécessaire */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="logo">
+            <a href="commercialisation.html">
+                <img src="img/logo.jpg" alt="logo" height="45px" srcset="">
+            </a>
+        </h1>
+
+        <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="commercialisation.html">Commercialisation</a></li>
+            <li><a href="Prod/index.html">Aide à la production</a></li>
+            <li><a href="index.html">Promotion</a></li>
+            <li><a href="Prod/Connexion_page.html"><img src="img/logo/connexion.png" alt="" height="15px"></a></li>
+            <li><a href="panier.html">
+                    <img src="img/logo/panier.png" alt="" height="15px">
+                </a></li>
+        </ul>
+    </nav>
+
+    <!-- BANNIERE -->
+    <div class="banniere">
+        <!-- <p class="banniere_word">Accueil</p> -->
+    </div>
+
+
+
+    <!-- GRILLE -->
+    <section class="grid">
+        <div class="filter">
+            <div class="searchn">
+                <div class="searching" style="padding-top: 25px;
+                    padding-left: 25px;">
+                    <div class="container h-100">
+                        <div class="d-flex justify-content-center h-100">
+                            <div class="search">
+                                <input class="search_input" type="text" name="" placeholder="Rechercher ici...">
+                                <a href="#" class="search_icon"><i class="fa fa-search"><img src="img/loupe.png" alt=""
+                                            height="20px" width="20px" style="padding-top: 3%;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info_navbar">
+                    <h1 style="padding-top: 35px; padding-left: 35px; color: green; font-weight: bolder;">Categories
+                    </h1>
+
+                    <ul style="padding-left: 55px;">
+                        <li><a href="">Œufs frais</a></li>
+                        <li><a href="">Poulets de chair</a></li>
+                        <li><a href="">Poules pondeuses</a></li>
+                        <li><a href="">Aliments pour volailles</a></li>
+                        <li><a href="">Engrais organiques</a></li>
+                        <li><a href="">Matériel avicole</a></li>
+                        <li><a href="">Produits transformés (nuggets, conserves)</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="grille">
+            <div class="grille_title" style="color: rgb(104, 193, 88);">
+                <div class="showing">
+                    <p>Montre de 1-<a href="" style="color: green;">2</a> sur 2 resultats</p>
+                </div>
+
+                <div class="sort">
+                    Afficher par : <a href="" style="color: green;">Tous</a>
+                </div>
+            </div>
+
+            <div class="galerie">
+                <div class="zone">
+                    <div class="card">
+                        <a href="detailsCommercialisation.html?nom=Banane&prix=500&description=Description%20de%20l'Aubergine&categorie=Legumes&producteur=Nom%20du%20producteur&duree=1%20semaine&image=img/details/banane1.jpg"">
+                                <img src="img/11.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Poulet de chair</h2>
+                            <h3 style="padding-bottom: 8px;">3500 F</h3>
+                            <button onclick="ajouterAuPanier('Poulet de chair', 3500)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Aubergine&prix=250&description=Description%20de%20l'Aubergine&categorie=Legumes&producteur=Nom%20du%20producteur&duree=1%20semaine&image=img/details/aubergined.jpg">
+                            <img src="img/oeufs.jpeg" id="mainImage" alt="Main Product Image" height="200px"
+                                width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Œufs frais</h2>
+                            <h3 style="padding-bottom: 8px;">2000 F</h3>
+                            <button onclick="ajouterAuPanier('Œufs frais', 2000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Oignon&prix=150&description=Description%20de%20l'Oignon&categorie=Feuille&producteur=Bamba%20Aziz&duree=3%20jours&image=img/details/Oignond.jpg">
+                            <img src="img/aliment2.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Aliments</h2>
+                            <h3 style="padding-bottom: 8px;">1000 F</h3>
+                            <button onclick="ajouterAuPanier('Aliments', 1000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="zone">
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Manioc&prix=300&description=Description%20de%20l'Manioc&categorie=Feculent&producteur=Kone&duree=Hier&image=img/details/Maniocd.jpg">
+                            <img src="img/africain.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Poulets africains</h2>
+                            <h3 style="padding-bottom: 8px;">300 F</h3>
+                            <button onclick="ajouterAuPanier('MViande de poulet transformée', 300)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Tomate&prix=200&description=Description%20de%20l'Tomate&categorie=Legumes&producteur=Aliou&duree=3%20Heures&image=img/details/tomated.jpg">
+                            <img src="img/13.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Poussins</h2>
+                            <h3 style="padding-bottom: 8px;">200 F</h3>
+                            <button onclick="ajouterAuPanier('Plumes de poulet', 200)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Piment&prix=250&description=Description%20de%20l'Piment&categorie=Legume&producteur=Bamba%20Aziz&duree=3%20jours&image=img/details/pimentd.jpg">
+                            <img src="img/7.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="Nids pour pondeuses">
+                            <h2>Plumes</h2>
+                            <h3 style="padding-bottom: 8px;">100 F</h3>
+                            <button onclick="ajouterAuPanier('Nids pour pondeuses', 100)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+
+<!-- 
+                <div class="zone">
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Patate&prix=450&description=Description%20de%20l'Patate&categorie=Feculent&producteur=Bamba%20Aziz&duree=3%20jours&image=img/details/patated.jpg">
+                            <img src="img/details/patated.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Patate</h2>
+                            <h3 style="padding-bottom: 8px;">450 F</h3>
+                            <button onclick="ajouterAuPanier('Patate', 450)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Avocat&prix=250&description=Description%20de%20l'Piment&categorie=Fruit&producteur=Bamba%20Aziz&duree=3%20jours&image=img/details/avocatd.jpg">
+                            <img src="img/details/avocatd.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Avocat</h2>
+                            <h3 style="padding-bottom: 8px;">250 FCFA</h3>
+                            <button onclick="ajouterAuPanier('Avocat', 250)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a
+                            href="detailsCommercialisation.html?nom=Epinard&prix=100&description=Description%20de%20l'Epinard&categorie=Legume&producteur=Bamba%20Aziz&duree=3%20jours&image=img/details/epinard.jpg">
+                            <img src="img/details/epinard.jpg" alt="" height="200px" width="270px" class="images">
+                        </a>
+                        <div class="info">
+                            <h2>Epinard</h2>
+                            <h3 style="padding-bottom: 8px;">100 FCFA</h3>
+                            <button onclick="ajouterAuPanier('Epinard', 100)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="grille_next" style="color: rgb(104, 193, 88);">
+                <div class="number">
+                    <p>1 <a href="" style="color: green;">2</a></p>
+                </div>
+
+                <div class="see_all">
+                    <a href="" style="color: green;">Voir tous</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain">
+            <div class="root"></div>
+            <div class="sidebar">
+                <div class="head">
+                    <p>Mon panier</p>
+                    <a href="#" onclick="viderPanier()">
+                        <img src="img/logo/restart.png" alt="" height="30px">
+                    </a>
+                </div>
+                <div id="cartItem">Votre panier est vide</div>
+                <div class="foot">
+                    <h3>Total</h3>
+                    <h2 id="total">0 FCFA</h2>
+                </div>
+                <button onclick="validerPanier()">Valider le panier</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="script/script.js"></script>
+    <script src="script/panier.js"></script>
+    <script>
+        // Fonction pour vider le panier
+        function viderPanier() {
+            panier = [];
+            localStorage.setItem('panier', JSON.stringify(panier));
+
+            // Mettez à jour l'affichage du panier
+            mettreAJourAffichagePanier(panier);
+        }
+
+        // Fonction pour valider le panier
+        function validerPanier() {
+            // Stockez le panier dans localStorage avant la redirection
+            localStorage.setItem('panier', JSON.stringify(panier));
+
+            // Redirigez vers la page "panier.html"
+            window.location.href = 'panier.html';
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            panier = chargerPanier();
+            genererElementsPanier();
+        });
+
+    </script>
+</body>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Accueil</h2>
+            <ul>
+                <li><a href="#">À propos de l'élevage</a></li>
+                <li><a href="#">Technologies 4.0</a></li>
+                <li><a href="#">Contactez-nous</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Solutions 4.0</h2>
+            <ul>
+                <li><a href="#">IoT pour poulaillers</a></li>
+                <li><a href="#">Prédiction des maladies</a></li>
+                <li><a href="#">Traçabilité des produits</a></li>
+                <li><a href="#">Optimisation de la production</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Nos Services</h2>
+            <ul>
+                <li><a href="#">Formation des éleveurs</a></li>
+                <li><a href="#">Conseils techniques</a></li>
+                <li><a href="#">Plateformes de gestion</a></li>
+                <li><a href="#">Vente de produits avicoles</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Ressources</h2>
+            <ul>
+                <li><a href="#">Blog et articles</a></li>
+                <li><a href="#">Guides pratiques</a></li>
+                <li><a href="#">Webinaires</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Élevage 4.0. Tous droits réservés. | Conçu pour un avenir durable.</p>
+    </div>
+</footer>
+
+</html>

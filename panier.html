@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinnov - Panier</title>
+    <link rel="stylesheet" href="css/panier.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">
+            <a href="commercialisation.html">
+                <img src="img/logo.jpg" alt="logo" height="45px" srcset="">
+            </a>
+        </h1>
+
+        <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="./commercialisation.html">Commercialisation</a></li>
+            <li><a href="Prod/index.html">Aide à la production</a></li>
+            <li><a href="">Promotion</a></li>
+            <li><a href=""><img src="img/logo/connexion.png" alt="" height="15px"></a></li>
+            <li><a href="">
+                <img src="img/logo/panier.png" alt="" height="15px">
+            </a></li>
+        </ul>
+    </nav>
+    
+
+
+    <main>
+        <section class="payment-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2>Paiement</h2>
+                    <p>Voici la liste de votre panier</p>
+                </div>
+                <form>
+                    <div class="product"></div>
+                    <div class="card-details"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+   
+    
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="script/panier.js"></script>
+<script src="script/script.js"></script>
+<script>
+    // Fonction pour récupérer le panier depuis localStorage
+    function chargerPanierDepuisLocalStorage() {
+        var panierJSON = localStorage.getItem('panier');
+        return panierJSON ? JSON.parse(panierJSON) : [];
+    }
+
+    // Fonction pour générer les éléments du panier dans la section de paiement
+    function genererElementsPanier() {
+        var productsElement = document.querySelector('.product');
+        var panier = chargerPanierDepuisLocalStorage();
+
+        // Vérifiez s'il y a des éléments dans le panier
+        if (panier.length === 0) {
+            productsElement.innerHTML = '<p>Votre panier est vide</p>';
+        } else {
+            var total = 0;
+            var html = '<h3 class="title">Votre Panier</h3>';
+
+            panier.forEach(function (produit, index) {
+                html += `
+                    <div class="item">
+                        <span class="price">${produit.prix} FCFA</span>
+                        <p class="item-name">${produit.nom}</p>
+                        <button class="removeButton" onclick="retirerDuPanier(${index})">Supprimer</button>
+                    </div>
+                `;
+                total += produit.prix;
+            });
+
+            // Ajoutez le total à la fin
+            html += `<div class="total">Total<span class="price">${total} FCFA</span></div>`;
+
+            // Ajoutez une classe au conteneur pour styliser
+            html = `<div class="products">${html}</div>`;
+
+            productsElement.innerHTML = html;
+        }
+
+        // Ajouter la partie des détails de la carte de crédit
+        var cardDetailsElement = document.querySelector('.card-details');
+        cardDetailsElement.innerHTML = `
+            <h3 class="title">Credit Card Details</h3>
+            <div class="paye">
+                <div class="haut">
+                    <a href="">
+                        <img src="img/operateurs/moov.jpg" alt="" height="120px"></a>
+                    <a href="">
+                        <img src="img/operateurs/mtn.jpg" alt="" height="120px"></a>
+                </div>
+                <div class="foot">
+                    <a href="">
+                        <img src="img/operateurs/orange.jpg" alt="" height="120px"></a>
+                    <a href="">
+                        <img src="img/operateurs/wave.jpg" alt="" height="120px"></a>
+                </div>
+            </div>
+        `;
+    }
+
+    // Fonction pour retirer un produit du panier
+    function retirerDuPanier(index) {
+        var panier = chargerPanierDepuisLocalStorage();
+        panier.splice(index, 1);
+        localStorage.setItem('panier', JSON.stringify(panier));
+        genererElementsPanier(); // Mettez à jour l'affichage du panier
+    }
+
+    // Mettez à jour l'affichage du panier dans la section de paiement lors du chargement de la page
+    document.addEventListener('DOMContentLoaded', function () {
+        genererElementsPanier();
+    });
+</script>
+
+</body>
+   
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Accueil</h2>
+            <ul>
+                <li><a href="#">À propos de l'élevage</a></li>
+                <li><a href="#">Technologies 4.0</a></li>
+                <li><a href="#">Contactez-nous</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Solutions 4.0</h2>
+            <ul>
+                <li><a href="#">IoT pour poulaillers</a></li>
+                <li><a href="#">Prédiction des maladies</a></li>
+                <li><a href="#">Traçabilité des produits</a></li>
+                <li><a href="#">Optimisation de la production</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Nos Services</h2>
+            <ul>
+                <li><a href="#">Formation des éleveurs</a></li>
+                <li><a href="#">Conseils techniques</a></li>
+                <li><a href="#">Plateformes de gestion</a></li>
+                <li><a href="#">Vente de produits avicoles</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Ressources</h2>
+            <ul>
+                <li><a href="#">Blog et articles</a></li>
+                <li><a href="#">Guides pratiques</a></li>
+                <li><a href="#">Webinaires</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Élevage 4.0. Tous droits réservés. | Conçu pour un avenir durable.</p>
+    </div>
+</footer>
+
+</html>
